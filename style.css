@@ -2,209 +2,42 @@
     margin: 0px;
     padding: 0px;
    }
-#backgroundtop{
-    background: linear-gradient(#1C6199, #297FC4);
-    display: block;
-    position: relative;
-    width: 970px;
-    height: 450px;
-    border-bottom: 2px black solid;
+.blue{
+    color: blue;
 }
 #header{
-    width: 970px;
-}
-#python{
-    width: 370px;
-    display: inline;
-}
-#righthead{
-    display: inline;
-    position: relative;
-    align-items: right;
-}
-#rightheadtop{
-    position: absolute; 
-    display: inline;
-    left: 380px;
-    width: 200px;
-    margin: 10px;
-}
-#blacksearch{
-    background-color: #5A5C5E;
-    border-radius: 10px;
-    width: 275px;
-    height: 57px;
-    display: inline-block;
-    position: absolute;
-    left: 310px;
-    bottom: 15px;
-    box-shadow: 3px 2px; 
-}
-#whitesearch{
-    position: absolute;
-    background: white;
-    display: inline;
-    width: 150px;
-    height: 30px;
-    top: 11px;
-    left: 40px;
-    border: 2px solid grey;
-    box-shadow: 1px 1px;
-}
-#search{
-    display: absolute;
-    text-align: center;
-    font-size: 11px;
-    color: silver;
-    justify-content: center;
-    padding: 9px;
-    font-family: arial;
-}
-#go{
-    position: absolute;
-    background-color: #1C6199;
-    width: 35px;
-    height: 28px;
-    right: 30px;
-    top: 15px;
-    border-radius: 3px;
-    border: silver solid 1px;
-    box-shadow: 1px 1px;
-}
-#gotext{
-    color: white;
-    position: absolute;
-    padding: 8px;
-    font-size: 12px;
-    font-family: arial;
-}
-#nav{
-    background: linear-gradient(#55A4E6, #74B4E8);
-    position: absolute;
-    display: inline;
-    width: 800px;
-    height: 42px;
-    border-radius: 3px;
-    right: 85px;
-    margin-top: 20px;
-    box-shadow: 2px 2px;
-}
-#navtext{
-    display: inline-block;
-    color: white;
-    font-size: 24px;
-    font-family: arial;
-    margin-top: 8px;
-    margin-left: 60px;
-    word-spacing: 10px;
-}
-#leftlinks{
-    display: inline-block;
-    width: 270px;
-    height: 200px;
-    margin-top: 75px;
-    margin-left: 55px;
-}
-#leftlinks>ul{
-    color: white;
-    text-align: center;
-    text-decoration: underline;
-    margin: 25px;
-    font-size: 20px;
-    margin-left: 70px;
-}
-#summary{
-    position: absolute;
-    display: inline-block;
-    height: 100px;
-    width: 550px;
-    top: 190px;
-}
-#summary>p{
-    color: white;
-}
-#zen{
-    font-family: arial;
-    text-align: center;
-    margin-top: -90px;
-    color: yellow;
-    margin-left: 130px;
-}
-#zen>p{
-    margin-top: 5px;
-}
-#zen>h3{
-    color: white;
-    margin-top: 5px;
-}
-#middle{
-    position: relative;
-}
-#midleft{
-    display: inline-block;
-    height: 200px;
-    width: 400px;
-    text-align: center;
-    list-style-position: inside;
-    position: absolute;
-    left: 75px;
-    top: 10px;
-    border-top: 4px solid #55A4E6;
-    padding-top: 2px;
-}
-.leftlist{
-    padding-left: 20px;
-    width: 300px;
-    text-align: center;
-    margin-left: 30px;
-    margin-top: 3px;
-}
-#midright{
-    display: inline-block;
-    height: 200px;
-    width: 400px;
-    text-align: center;
-    list-style-position: inside;
-    position: absolute;
-    left: 500px;
-    top: 10px;
-    border-top: 4px solid #55A4E6;
-    padding-top: 2px;
-}
-#footer{
-    background: linear-gradient(#1C6199, #297FC4);
-    width: 970px;
-    height: 100px;
     display: block;
-    margin-top: 220px;
-    
+    position: relative;
 }
-#foot1{
+#header>img{
+    width: 90px;
+    display: inline-block;
+}
+#header>p{
+    color: grey;
+    font-size: 45px;
+    display: inline;
+    position: absolute;
+    top: 20px;
+}
+#wrapper{
     width: 970px;
-    background-color: red;
-    margin-top: 40px;
-    display: inline-block;
-    text-align: center;
+    height: 500px;
+    /* background-color: red; */
+    display: block;
+    margin: 0 auto;
 }
-#ft1{
-    background-color: yellow;
-    color: white;
+#www{
+    width: 970px;
+    background: linear-gradient(#1C6199, #297FC4);
+    height: 50px;
     display: inline-block;
-    width: 200px;
-    height: 100px;
+    margin-top:-20px;
 }
-
-
-
-
-
-
-
-
-display: inline-block;
+#www>p{
+    position: absolute;
+    top: 85px;
     color: white;
-    font-size: 24px;
-    font-family: arial;
-    margin-top: 8px;
-    margin-left: 60px;
-    word-spacing: 10px;
+    font-size: 25px;
+    left: 50px;
+}
