@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>New</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  </head>
+  <body>
+        <form action="/users/create" method="POST">
+            {% csrf_token %}
+            <h1>New User</h1>
+            <div class="form-row">
+                <div class="col">
+                    <input type="text" name="name" class="form-control" value="{{user.name}}" placeholder="Name">
+                </div>
+                <br>
+                <div class="col">
+                    <input type="text" name="email" class="form-control" placeholder="Email">
+                </div>
+            </div>
+            <input type="submit">
+        </form>
+  </body>
+</html>

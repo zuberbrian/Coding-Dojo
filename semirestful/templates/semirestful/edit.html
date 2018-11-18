@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>User Edit</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  </head>
+  <body>
+    <h1>Edit User #{{user.id}}</h1>
+    <form action="/users/{{user.id}}" method="POST">
+        {% csrf_token %}
+        Name: <input type="text" name="name" value="{{user.name}}"><br>
+        Email: <input type="text" name="email" value="{{user.email}}"><br>
+        <input type="submit" value="update">
+    </form>
+    <a href="/users/{{user.id}}">Show</a> | <a href="/users">Go Back</a>
+  </body>
+</html>

@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Login and Registration</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        #wrapper{
+            width: 400px;
+            clear: both;
+            margin: 10px;
+        }
+        #wrapper input{
+            width: 100%;
+            clear: both;
+        }
+        #form1{
+            border: 1px black solid;
+            padding: 10px;
+        }
+        #lower{
+            width: 400px;
+            clear: both;
+            margin-left: 10px;
+        }
+        #lower input{
+            width: 100%;
+            clear: both;
+        }
+        #form2{
+            border: 1px black solid;
+            padding: 10px;
+        }
+    </style>
+  </head>
+  <body>
+    <div id="wrapper">
+        <h1>Registration</h1>
+        <form name="reg" id="form1" action="/register" method="POST">
+            {% csrf_token %}
+            First Name: <input type="text" name="first_name"><br><br>
+            Last Name: <input type="text" name="last_name"><br><br>
+            Email: <input type="text" name="email"><br><br>
+            Password: <input type="password" name="password"><br><br>
+            Confirm Password: <input type="password" name="pw_confirm"><br><br>
+            <input type="submit" value="Submit Registration">
+        </form>
+    </div>
+    <div id="lower">
+        <br>
+        <h1>Log In</h1>
+        <form name="login" id="form2" action="/signin" method="POST">
+            {% csrf_token %}
+            Email: <input type="text" name="logemail"><br><br>
+            Password: <input type="password" name="logpw"><br><br>
+            <input type="submit" value="Login">
+        </form>
+    </div>
+  </body>
+</html>

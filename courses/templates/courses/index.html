@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Courses</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  </head>
+  <body>
+
+    <div id="wrapper"></div>
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+      <h1>Add a new course</h1>
+      <form name="input" action="/process" method="POST">
+        {% csrf_token %}
+        Name: <input type="text" name="name"><br><br>
+        Description: <textarea name="descrip" cols=50 rows= 6></textarea><br><br>
+        <input type="submit">
+      </form>
+      <br>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Course Name</th>
+            <th>Description</th>
+            <th>Date Added</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+        <!-- {% if courses %} -->
+          {% for course in courses %}
+            <tr>
+              <td>{{ course.name }}</td>
+              <td>{{ course.descrip }}</td>
+              <td>{{ course.created_at }}</td>
+              <td><a href="/destroy/{{ course.id }}">Remove</a></td>
+            </tr>
+          {% endfor %}
+        <!-- {% endif %} -->
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
