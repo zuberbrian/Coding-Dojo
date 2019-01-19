@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Add Job</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        *{
+            margin: 10px;
+        }
+        #headerleft{
+            width: 500px;
+            display: inline-block;
+        }
+        #headerright{
+            width: 500px;
+            display: inline-block;
+            vertical-align: top;
+            text-align: right;
+            margin-top: 20px;
+        }
+        #input{
+            border: 1px black solid;
+            width: 500px;
+        }
+    </style>
+  </head>
+  <body>
+        {% if messages %}
+            <ul class="messages">
+            {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+    <div id="header">
+        <div id="headerleft">
+            <h2>Add a Job</h2>
+        </div>
+        <div id="headerright">
+            <a href="/dashboard">Back</a> | <a href="/logout">Log Out</a>
+        </div>
+    </div>
+    <div id="input">
+        <form name="newjob" id="newjob" action="/process" method="POST">
+            {% csrf_token %}
+            Title: <input type="text" name="jobtitle"><br><br>
+            Description: <textarea rows="4" cols="50" name="description"></textarea><br><br>
+            Location: <input type="text" name="location"><br><br>
+            <input type="submit" value="Submit" id="jobsubmit">
+        </form>
+    </div>
+  </body>
+</html>

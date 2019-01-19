@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>View Job</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        *{
+            margin: 10px;
+            width: 1200px;
+        }
+        #info{
+            width: 500px;
+            border: 1px solid black;
+        }
+        #header{
+            text-align: right;
+            display: block;
+        }
+    </style>
+  </head>
+  <body>
+    <div id="header">
+        <a href="/dashboard">Back</a> | <a href="/logout">Log Out</a>
+    </div>
+    <h3>{{job.name}}</h3>
+        <div id="info">
+            <p>Info: {{job.description}}</p>
+            <p>Location: {{job.location}}</p>
+            <p>Posted by: {{job.addedby.first_name}}</p>
+            <p>Posted on: {{job.created_at}}</p>
+        </div>
+    <h3><a href="/add/{{job.id}}">Add to my jobs</a></h3>
+  </body>
+</html>

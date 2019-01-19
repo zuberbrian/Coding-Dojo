@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Job Dashboard</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        *{
+            margin: 10px;
+        }
+        #headerleft{
+            width: 500px;
+            display: inline-block;
+        }
+        #headerright{
+            width: 500px;
+            display: inline-block;
+            vertical-align: top;
+            text-align: right;
+            margin-top: 20px;
+        }
+        #leftlist{
+            width: 600px;
+            display: inline-block;
+        }
+        #rightlist{
+            width: 600px;
+            display: inline-block;
+            vertical-align: top;
+        }
+    </style>
+  </head>
+  <body>
+    <div id="header">
+        <div id="headerleft">
+            <h2>Welcome, {{request.session.first_name}}!</h2>
+            <a href="/logout">Log Out</a><br><br>
+        </div>
+        <div id="headerright">
+            <h4><a href="/addjob">Add A Job</a></h4>
+        </div>
+    </div>
+    <div id="lists">
+        <div id="leftlist">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Job</th>
+                        <th>Location</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for job in jobs %}
+                        <tr>
+                            <td>{{job.name}}</td>
+                            <td>{{job.location}}</td>
+                            <td>
+                                <a href="/view/{{job.id}}">View</a>
+                                <a href="/add/{{job.id}}">Add</a>
+                                {% if Job.addedby.id == User.id %}
+                                <a href="/delete/{{job.id}}">Cancel</a>
+                                <a href="/edit/{{job.id}}">Edit</a>
+                                {% endif %}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div id="rightlist">
+            <table class="table table-bordered">
+                <thead>
+                    <th>My Jobs</th>
+                    <th>Actions</th>
+                </thead>
+                <tbody>
+                    {% for job in myjobs %}
+                        <tr>
+                            <td>{{job.name}}</td>
+                            <td>
+                                <a href="/view/{{job.id}}">View</a>
+                                <a href="/delete/{{job.id}}">Done</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+  </body>
+</html>
